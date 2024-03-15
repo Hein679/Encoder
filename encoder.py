@@ -30,12 +30,12 @@ encoded_command = ''
 if (args.binary):
     for c in command:
         encoded_command += f'{bin(ord(c))[2:]} '
-    print("Decimal Encoding: ")    
+    print("Binary Encoding: ")    
     print(encoded_command, "\n")
 
 encoded_command = ''
 if (args.decimal):
     for c in command:
         encoded_command += f'{ord(c)} '
-    print("Binary Encoding: ")    
+    print("Decimal Encoding: ")    
     print(encoded_command, "\n")

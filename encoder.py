@@ -1,8 +1,16 @@
 #!/usr/bin/python
 import argparse
 
-parser = argparse.ArgumentParser(description="Encode command using Hexadecimal or Octal. Usage encoder.py <command> [options...]")
-parser.add_argument('command', metavar="<command>", type=str, help='String to Encode')
+from argparse import RawTextHelpFormatter
+
+parser = argparse.ArgumentParser(description='''Encode command in Hexadecimal or Octal.
+                                 
+EXAMPLES:
+    encoder.py "Hello World" (Default: -hex)
+    encoder.py "Hello World" --oct
+    encoder.py "Hello World" --hex --oct --binary --decimal''', formatter_class=RawTextHelpFormatter)
+
+parser.add_argument('command', metavar="[command]", type=str, help='String to Encode')
 parser.add_argument('--hex', action='store_true', help='Hex Encoding')
 parser.add_argument('--oct', action='store_true', help='Octal Encoding')
 parser.add_argument('--binary', action='store_true', help='Octal Encoding')
